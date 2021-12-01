@@ -23,7 +23,7 @@ public:
         {
             this->input_file.open(file);
         }
-        catch (const std::exception &e)
+        catch (const std::exception& e)
         {
             std::cerr << "An error occurred: " << e.what() << "\n";
         }
@@ -39,5 +39,17 @@ public:
         }
 
         return this->input_data;
+    }
+
+    std::vector<int> stringToInt(const std::vector<std::string>& input_string_data)
+    {
+        std::vector<int> input_int_data;
+
+        for (const std::string& line : input_string_data)
+        {
+            input_int_data.push_back(std::stoi(line));
+        }
+
+        return input_int_data;
     }
 };
